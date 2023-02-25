@@ -15,7 +15,10 @@ const reducer = (state = initialState, action) => {
           colors: [...state.colors, color],
         };
       } else if (changeType === "remove") {
-        return state.colors.filter((oldColor) => oldColor !== color);
+        return {
+          ...state,
+          colors: state.colors.filter((oldColor) => oldColor !== color),
+        };
       } else {
         return state;
       }
