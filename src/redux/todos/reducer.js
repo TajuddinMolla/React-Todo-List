@@ -21,6 +21,7 @@ const reducer = (state = initialState, action) => {
         {
           id: nextTodoId(state),
           text: action.payload,
+          completed: false
         },
       ];
     case TOGGLED:
